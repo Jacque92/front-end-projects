@@ -10,19 +10,23 @@ header {
   position: absolute;
   top: 0;
   left: 0;
+  border-bottom: 1px solid black;
+  background-color: rgba(255, 255, 255, 0.817);
+  width: 100%;
 }
 header ul {
   display: flex;
 }
 header ul li {
   list-style-type: none;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   margin: 0.5rem;
-  border: 1px solid white;
 }
 header ul li:hover {
-  border: 1px solid grey;
-  border-radius: 5px;
+  /* border: 1px solid black;
+  border-radius: 4px;
+  background-color: black; */
+  color: black;
 }
 .floater {
   float: left;
@@ -60,4 +64,219 @@ header ul li:hover {
   border: none;
   color: white;
   box-shadow: rgba(108, 108, 108, 0.68) 2px 2px 4px;
+}
+.markdownPreviewer {
+  background-color: rgb(169, 190, 213);
+  display: flex;
+  justify-content: space-around;
+}
+
+section {
+  width: 40%;
+  height: 80vh;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  border-radius: 5px;
+}
+.toolbar {
+  width: 100%;
+
+  position: relative;
+  height: 40px;
+  text-align: center;
+  padding: 0.5rem;
+}
+.toolbar h1 {
+  line-height: 100%;
+}
+textarea {
+  resize: vertical;
+  outline: none;
+  border: none;
+}
+.input,
+.output {
+  width: 100%;
+  height: 95%;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  padding: 2rem;
+  overflow: scroll;
+}
+.output {
+  line-height: 1.8rem;
+}
+.output img {
+  width: 30%;
+  height: auto;
+}
+/*---------------------------------- drum machine */
+.drumMachine {
+  background-color: darksalmon;
+}
+.drumMachine .board {
+  width: 700px;
+  height: 350px;
+}
+.drumMachine .btn_group {
+  height: 100%;
+  width: 55%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+}
+.drumMachine .btn_group button {
+  width: 100px;
+  height: 80px;
+  font-size: 20px;
+  background-color: rgb(222, 222, 222);
+  border: none;
+  box-shadow: gray 2px 2px 2px;
+}
+.drumMachine .btn_group button:hover {
+  box-shadow: gray 3px 3px 3px;
+}
+.drumMachine .board {
+  display: flex;
+  flex-direction: row;
+}
+.drumMachine .controlers {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: right;
+  align-items: flex-end;
+  width: 40%;
+}
+.drumMachine .controlers p,
+.drumMachine .controlers input {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  vertical-align: middle;
+  background-color: rgb(169, 169, 169);
+  border-radius: 5px;
+}
+.controlers .btn_container {
+  height: 36px;
+  width: 60px;
+  border-radius: 18px;
+  background-color: rgb(72, 72, 72);
+  box-shadow: rgb(169, 169, 169) 1px 1px 1px;
+}
+.btn_container button {
+  height: 36px;
+  width: 37px;
+  border-radius: 50%;
+  border: 4px solid rgb(72, 72, 72);
+}
+
+/* calculator */
+.calculator {
+  background-color: rgb(163, 198, 163);
+}
+.calculator .board {
+  width: 400px;
+  height: 700px;
+  padding: 0.6rem;
+}
+.calculator .board p {
+  padding: 1.5rem;
+  height: 100%;
+  text-align: end;
+}
+.calculator .floater {
+  margin-bottom: -300px;
+}
+.calculator .screen {
+  background-color: rgb(77, 96, 77);
+  height: 220px;
+  margin: 0.5rem;
+  border-radius: 8px;
+}
+.calculator .keys {
+  width: 100%;
+  height: 68%;
+  padding: 0.1rem 0.5rem 0.5rem 0.5rem;
+  display: grid;
+  grid: repeat(5, 80px) / repeat(4, 80px);
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+.calculator .keys :first-child {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.calculator .keys :last-child {
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 4;
+  grid-row-end: 6;
+}
+.calculator .keys :nth-last-child(3) {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+/*--------------------------------------- clock------- */
+.clock {
+  background-color: rgb(250, 248, 176);
+}
+.clock .floater {
+  margin-bottom: -200px;
+}
+
+.clock .board {
+  width: 500px;
+  height: 400px;
+  padding: 1.5rem 2rem;
+}
+.setup table {
+  text-align: right;
+  width: 100%;
+}
+.setup table th {
+  text-align: right;
+}
+.setup table tr {
+  height: 35px;
+}
+.setup table td {
+  width: 32%;
+}
+.clock button {
+  width: 30px;
+  height: 30px;
+  font-size: 14px;
+}
+.clock input {
+  width: 60px;
+  height: 30px;
+  margin: 0 0.3rem;
+}
+
+.clock .display {
+  padding: 1.5rem;
+  text-align: center;
+  height: 63%;
+  background-color: rgb(237, 224, 129);
+  border-radius: 8px;
+}
+.clock .display h1 {
+  line-height: 140px;
+  font-size: 100px;
+}
+.clock .btn_group {
+  height: 30px;
+  width: 50%;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+}
+.clock .btn_group button {
+  width: 40px;
+  height: 40px;
 }
