@@ -81,13 +81,21 @@ export const Clock = () => {
 
   const handleIncrease = (key) => {
     setLength({ ...length, [key]: length[key] + 1 });
-    setMinute(length[key] + 1);
+
     setSecond(0);
+    if (activeSession === key) {
+      setMinute(length[key] + 1);
+    }
   };
   const handleDecrease = (key) => {
-    setLength({ ...length, [key]: length[key] - 1 });
-    setMinute(length[key] - 1);
-    setSecond(0);
+    if (length[key] > 0) {
+      setLength({ ...length, [key]: length[key] - 1 });
+
+      setSecond(0);
+      if (activeSession === key) {
+        setMinute(length[key] - 1);
+      }
+    }
   };
 
   const handleStart = () => {

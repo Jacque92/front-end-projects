@@ -30,7 +30,7 @@ This is a block of code
     let z=x+y;
 \`\`\`
 
-![image](https://cdn-icons.flaticon.com/png/512/6143/premium/6143312.png?token=exp=1638316355~hmac=7c4c068700778f13824e5c4376c61510)
+![image](https://image.freepik.com/free-vector/calendar-header-2022-number-colorful-abstract-color-paint-brush-strokes-happy-2022-new-year-colorful-background_87521-3053.jpg)
   `;
   const [text, setText] = useState(initialstate);
   const handleChange = (e) => {

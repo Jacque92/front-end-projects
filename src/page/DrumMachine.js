@@ -52,7 +52,6 @@ export const DrumMachine = () => {
     <div className="page drumMachine">
       <div className="floater"></div>
       <section className="board">
-        {/* <audio src={currentClip.url} /> */}
         <div className="btn_group">
           {bank === 1
             ? bankOne.map((sound) => {
