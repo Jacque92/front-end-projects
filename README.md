@@ -1,4 +1,4 @@
-# Frontend Projects
+# Front End Projects
 
 This website includes five frontend projects showcasing what I learned from FreeCodeCamp Frontend Development curriculum.
 
