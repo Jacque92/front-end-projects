@@ -1,4 +1,3 @@
-import { current } from "immer";
 import React from "react";
 import { useState } from "react";
 //屏幕显示换行
@@ -153,8 +152,6 @@ export const Calculator = () => {
 
   return (
     <div className="page calculator">
-      <div className="floater"></div>
-
       <section className="board">
         <div className="screen">
           <p style={{ fontSize: 30, color: "white" }}>{result}</p>

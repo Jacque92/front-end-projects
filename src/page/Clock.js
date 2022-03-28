@@ -6,7 +6,9 @@ const SetUp = ({ title, length, handleIncrease, handleDecrease }) => {
     <div className="setup">
       <table>
         <tr>
-          <th>Break Length</th>
+          <th>
+            <h5>Break Length</h5>
+          </th>
           <td>
             <button onClick={() => handleDecrease("Break")}>-</button>
             <input type="text" value={length.Break}></input>
@@ -14,7 +16,9 @@ const SetUp = ({ title, length, handleIncrease, handleDecrease }) => {
           </td>
         </tr>
         <tr>
-          <th>Session Length</th>
+          <th>
+            <h5>Session Length</h5>
+          </th>
           <td>
             <button onClick={() => handleDecrease("Session")}>-</button>
             <input type="text" value={length.Session}></input>
@@ -117,7 +121,6 @@ export const Clock = () => {
 
   return (
     <div className="page clock">
-      <div className="floater"></div>
       <section className="board">
         <SetUp
           length={length}
@@ -129,7 +132,7 @@ export const Clock = () => {
           className="display"
           style={{ color: minute === 0 ? "red" : "black" }}
         >
-          <h2>{activeSession}</h2>
+          <p>{activeSession}</p>
           <h1>
             {minute === 0 ? "00" : minute < 10 ? "0" + minute : minute}:
             {second === 60 ? "00" : second < 10 ? "0" + second : second}

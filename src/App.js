@@ -12,9 +12,9 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Header />
+        {/* <Header /> */}
         <Routes>
-          <Route path="/" element={<QuoteMachine />} />
+          <Route exact path="/" element={<Home />} />
           <Route path="/quoteMachine" element={<QuoteMachine />} />
           <Route path="/markdownPreviewer" element={<MarkdownPreviewer />} />
           <Route path="/drumMachine" element={<DrumMachine />} />

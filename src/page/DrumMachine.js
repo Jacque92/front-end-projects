@@ -18,7 +18,7 @@ const Key = ({ sound, isOn, setCurrentKey, volume }) => {
 
   return (
     <button onClick={handleHit} value={audioElement}>
-      {display}
+      <h3>{display}</h3>
     </button>
   );
 };
@@ -50,7 +50,6 @@ export const DrumMachine = () => {
 
   return (
     <div className="page drumMachine">
-      <div className="floater"></div>
       <section className="board">
         <div className="btn_group">
           {bank === 1
@@ -75,32 +74,41 @@ export const DrumMachine = () => {
                 );
               })}
         </div>
-
-        <div className="controlers">
-          <div>
-            <h3>Power</h3>
-            <div className="btn_container" onClick={handleSwitch}>
-              <button style={{ float: isOn ? "left" : "right" }}></button>
-            </div>
-          </div>
-          <div>
-            <h3>Bank</h3>
-            <div className="btn_container" onClick={handleBank}>
-              <button style={{ float: bank === 1 ? "left" : "right" }}></button>
-            </div>
-          </div>
+        <div className="flex-column">
           <p>{isOn ? currentKey || "Power On" : "Power Off"}</p>
-          <div style={{ width: "100%" }}>
-            <h3>Volume</h3>
-            <input
-              onChange={handleVolume}
-              value={volume}
-              type="range"
-              id="volume"
-              name="volume"
-              min="0"
-              max="11"
-            />
+          <div className="controlers">
+            <div style={{ width: "100%" }}>
+              <h3>Volume</h3>
+              <input
+                onChange={handleVolume}
+                value={volume}
+                type="range"
+                id="volume"
+                name="volume"
+                min="0"
+                max="11"
+              />
+            </div>
+            <div className="flex-row">
+              <div>
+                <h3>Bank</h3>
+                <div className="btn_container" onClick={handleBank}>
+                  <button
+                    style={{ float: bank === 1 ? "left" : "right" }}
+                  ></button>
+                </div>
+              </div>
+              <div>
+                <h3>Power</h3>
+                <div className="btn_container" onClick={handleSwitch}>
+                  <button
+                    style={{
+                      float: isOn ? "left" : "right",
+                    }}
+                  ></button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

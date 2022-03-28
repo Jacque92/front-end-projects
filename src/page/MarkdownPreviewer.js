@@ -39,9 +39,9 @@ This is a block of code
   const markdown = marked(text, { breaks: true });
 
   return (
-    <div className="page">
-      <div className="markdownPreviewer">
-        <section>
+    <div className="page markdownPreviewer">
+      <section className="board">
+        <div>
           <div className="toolbar">
             <h1>Editor</h1>
           </div>
@@ -51,9 +51,9 @@ This is a block of code
             onChange={handleChange}
             value={text}
           ></textarea>
-        </section>
+        </div>
 
-        <section>
+        <div>
           <div className="toolbar">
             <h1>Previewer</h1>
           </div>
@@ -61,8 +61,8 @@ This is a block of code
             className="output"
             dangerouslySetInnerHTML={{ __html: markdown }}
           ></div>
-        </section>
-      </div>
+        </div>
+      </section>
     </div>
   );
 };

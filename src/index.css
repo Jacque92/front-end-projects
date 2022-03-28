@@ -3,8 +3,59 @@
   margin: 0;
   box-sizing: border-box;
 }
+body {
+  font-family: "Quicksand", sans-serif;
+  font-size: 62.5%;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Heebo", sans-serif;
+}
+em {
+  font-size: 1.1em;
+  font-weight: 800;
+}
+.wrapper {
+  background-color: ghostwhite;
+  font-size: 1.6em;
+  display: flex;
+  flex-direction: column;
+  padding: 5% 10%;
+}
+.wrapper .projectList {
+  margin-top: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wrapper .projectList li {
+  list-style: none;
+  margin: 10px;
+  flex: 1 1 40%;
+  border: 1.5px solid black;
+  border-radius: 0.2em;
+  overflow: hidden;
+}
+
+.wrapper .projectList li h4 {
+  padding: 0.5rem 1rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .wrapper .projectList li {
+    flex-basis: 100%;
+    height: 60vh;
+  }
+}
+
 .page {
-  height: 100vh;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 header {
   position: absolute;
@@ -28,24 +79,19 @@ header ul li:hover {
   background-color: black; */
   color: black;
 }
-.floater {
-  float: left;
-  width: 100%;
-  height: 50%;
-  margin-bottom: -200px;
-}
+
 .board {
   background-color: whitesmoke;
-  width: 600px;
-  padding: 2rem;
-  border-radius: 5px;
-  height: 30%;
-  margin: auto;
-  clear: both;
+  width: 80%;
+  padding: 2em;
+  border-radius: 0.3em;
+  margin: 2rem auto 4rem auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   box-shadow: rgba(108, 108, 108, 0.68) 2px 2px 4px;
+}
+.board > * {
+  margin-bottom: 1em;
 }
 .h_btn_group {
   display: flex;
@@ -71,16 +117,8 @@ header ul li:hover {
   justify-content: space-around;
 }
 
-section {
-  width: 40%;
-  height: 80vh;
-  margin-top: 10vh;
-  margin-bottom: 10vh;
-  border-radius: 5px;
-}
 .toolbar {
   width: 100%;
-
   position: relative;
   height: 40px;
   text-align: center;
@@ -114,97 +152,134 @@ textarea {
 .drumMachine {
   background-color: darksalmon;
 }
-.drumMachine .board {
-  width: 700px;
-  height: 350px;
-}
-.drumMachine .btn_group {
-  height: 100%;
-  width: 55%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-content: space-between;
-}
-.drumMachine .btn_group button {
-  width: 100px;
-  height: 80px;
-  font-size: 20px;
-  background-color: rgb(222, 222, 222);
-  border: none;
-  box-shadow: gray 2px 2px 2px;
-}
-.drumMachine .btn_group button:hover {
-  box-shadow: gray 3px 3px 3px;
-}
-.drumMachine .board {
+.flex-row {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
-.drumMachine .controlers {
+.flex-column {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  text-align: right;
-  align-items: flex-end;
-  width: 40%;
+  flex: 1 1 35%;
 }
-.drumMachine .controlers p,
-.drumMachine .controlers input {
+.drumMachine .btn_group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 0.5em;
+  height: 200px;
+}
+
+.drumMachine .btn_group button {
+  background-color: rgb(222, 222, 222);
+  border: none;
+  box-shadow: gray 2px 2px 2px;
+  border-radius: 0.6em;
+}
+.drumMachine .btn_group button:hover {
+  box-shadow: gray 3px 3px 3px;
+  color: darksalmon;
+}
+.drumMachine .controlers {
+  display: flex;
+  text-align: center;
+  margin-top: 0.5em;
+}
+@media screen and (max-width: 1200px) {
+  .drumMachine .board {
+    flex-direction: row;
+  }
+  .drumMachine .btn_group {
+    width: 60%;
+    margin-right: 1em;
+  }
+  .drumMachine .controlers {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 720px) {
+  .drumMachine .board {
+    flex-direction: column;
+    width: 70%;
+    padding: 5%;
+  }
+  .drumMachine .btn_group {
+    width: 100%;
+    margin-right: 1em;
+    height: 160px;
+    grid-gap: 0.4em;
+  }
+  .flex-column {
+    margin-bottom: 0;
+  }
+}
+
+/*switch and screen*/
+.drumMachine p {
   width: 100%;
-  height: 40px;
-  line-height: 40px;
+  height: 3em;
+  line-height: 3em;
   text-align: center;
   vertical-align: middle;
-  background-color: rgb(169, 169, 169);
+  background: linear-gradient(
+    90deg,
+    rgba(37, 37, 37, 1) 0%,
+    rgba(84, 84, 84, 1) 35%,
+    rgba(60, 60, 60, 1) 100%
+  );
+  color: white;
   border-radius: 5px;
 }
+.drumMachine .controlers input {
+  width: 98%;
+}
 .controlers .btn_container {
-  height: 36px;
-  width: 60px;
-  border-radius: 18px;
+  height: 30px;
+  width: 50px;
+  margin-left: 1rem;
+  border-radius: 15px;
   background-color: rgb(72, 72, 72);
   box-shadow: rgb(169, 169, 169) 1px 1px 1px;
 }
 .btn_container button {
-  height: 36px;
-  width: 37px;
+  height: 30px;
+  width: 31px;
   border-radius: 50%;
-  border: 4px solid rgb(72, 72, 72);
+  border: 3px solid rgb(72, 72, 72);
 }
 
-/* calculator */
+/*---------------------calculator */
 .calculator {
   background-color: rgb(163, 198, 163);
 }
 .calculator .board {
-  width: 400px;
-  height: 700px;
-  padding: 0.6rem;
+  padding: 1.2em;
 }
 .calculator .board p {
   padding: 1.5rem;
   height: 100%;
   text-align: end;
 }
-.calculator .floater {
-  margin-bottom: -300px;
-}
+
 .calculator .screen {
   background-color: rgb(77, 96, 77);
-  height: 220px;
+  height: 180px;
   margin: 0.5rem;
   border-radius: 8px;
 }
 .calculator .keys {
-  width: 100%;
-  height: 68%;
-  padding: 0.1rem 0.5rem 0.5rem 0.5rem;
+  /* border: 1px solid red; */
   display: grid;
-  grid: repeat(5, 80px) / repeat(4, 80px);
-  justify-content: space-between;
-  align-content: space-between;
+  grid: repeat(5, 60px) / repeat(4, 1fr);
+  /* justify-content: space-between;
+  align-content: space-between; */
+  padding: 0.1rem 0.5rem 0.5rem 0.5rem;
+  grid-gap: 0.2em;
 }
+/* .calculator .keys > * {
+  border: 2px solid blue;
+} */
 
 .calculator .keys :first-child {
   grid-column-start: 1;
@@ -220,19 +295,24 @@ textarea {
   grid-column-start: 1;
   grid-column-end: 3;
 }
+@media screen and (max-width: 1200px) {
+  .calculator .screen {
+    height: 100px;
+  }
+  .calculator .keys {
+    grid: repeat(5, 40px) / repeat(4, 1fr);
+  }
+}
+/* @media screen and (max-width: 580px) {
+  .calculator .keys {
+    grid: repeat(5, 80px) / repeat(4, 1fr);
+  }
+} */
 /*--------------------------------------- clock------- */
 .clock {
   background-color: rgb(250, 248, 176);
 }
-.clock .floater {
-  margin-bottom: -200px;
-}
 
-.clock .board {
-  width: 500px;
-  height: 400px;
-  padding: 1.5rem 2rem;
-}
 .setup table {
   text-align: right;
   width: 100%;
@@ -241,20 +321,25 @@ textarea {
   text-align: right;
 }
 .setup table tr {
-  height: 35px;
+  height: 1.8em;
 }
 .setup table td {
-  width: 32%;
+  width: 120px;
+}
+.setup table td input {
+  padding-left: 0.5rem;
 }
 .clock button {
-  width: 30px;
-  height: 30px;
-  font-size: 14px;
+  width: 2em;
+  height: 2em;
+  border: 0.5px solid grey;
+  border-radius: 0.2em;
+  box-shadow: 0.1em 0.1em 0.1em grey;
 }
 .clock input {
-  width: 60px;
-  height: 30px;
-  margin: 0 0.3rem;
+  width: 3em;
+  height: 2em;
+  margin: 0 0.4em;
 }
 
 .clock .display {
@@ -264,19 +349,28 @@ textarea {
   background-color: rgb(237, 224, 129);
   border-radius: 8px;
 }
-.clock .display h1 {
-  line-height: 140px;
-  font-size: 100px;
-}
-.clock .btn_group {
-  height: 30px;
-  width: 50%;
-  margin: 0 auto;
 
+.clock .btn_group {
+  height: 2rem;
+  width: 50%;
+  min-width: 10em;
+  max-width: 15em;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
 }
 .clock .btn_group button {
-  width: 40px;
-  height: 40px;
+  width: 3rem;
+  height: 2rem;
+}
+@media screen and (max-width: 580px) {
+  .wrapper {
+    width: 100%;
+    margin: 0;
+    padding: 8%;
+    font-size: 1.4em;
+  }
+  .clock .btn_group {
+    width: 100%;
+  }
 }
